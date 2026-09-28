@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../api";
 
 function Login() {
@@ -109,7 +109,12 @@ function Login() {
                     </button>
 
                 </form>
-
+<p>
+    Don't have an account?{" "}
+    <Link to="/register">
+        Register
+    </Link>
+</p>
             </div>
 
         </div>
