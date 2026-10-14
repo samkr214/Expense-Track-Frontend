@@ -116,3 +116,26 @@ export function deleteExpense(token, id) {
         }
     });
 }
+
+/* Email verification */
+export function verifyEmail(token) {
+    return request(
+        `/verify-email?token=${encodeURIComponent(token)}`
+    );
+}
+
+/* Forgot password */
+export function forgotPassword(email) {
+    return request("/forgot-password", {
+        method: "POST",
+        body: JSON.stringify({ email })
+    });
+}
+
+/* Reset password */
+export function resetPassword(token, newPassword) {
+    return request("/reset-password", {
+        method: "POST",
+        body: JSON.stringify({ token, newPassword })
+    });
+}
