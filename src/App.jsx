@@ -1,7 +1,6 @@
-
 import "./App.css";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -10,18 +9,19 @@ import Expenses from "./pages/Expenses";
 import EditExpense from "./pages/EditExpense";
 import Categories from "./pages/Categories";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import VerifyEmail from "./pages/VerifyEmail";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
 
+
 <Route
   path="/"
-  element={<Navigate to="/login" replace />}
+  element={<h1>ExpenseTrack</h1>}
 />
-
-
         <Route
           path="/expenses"
           element={
@@ -53,7 +53,15 @@ function App() {
           path="/login"
           element={<Login />}
         />
-
+              <Route path="/verify-email" element={<VerifyEmail />} />
+<Route
+  path="/forgot-password"
+  element={<ForgotPassword />}
+/>
+<Route
+  path="/reset-password"
+  element={<ResetPassword />}
+/>
         <Route
           path="/register"
           element={<Register />}
