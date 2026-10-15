@@ -19,10 +19,12 @@ function App() {
       <Routes>
 
 
+
 <Route
   path="/"
-  element={<h1>ExpenseTrack</h1>}
+  element={<Login />}
 />
+
         <Route
           path="/expenses"
           element={
